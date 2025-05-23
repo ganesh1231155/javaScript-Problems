@@ -34,10 +34,10 @@ function freeTime(schedules){
     merged.push(prev);
     const freeTime=[];
     for(let i=1;i<merged.length;i++){
-        const start=merged[i-1].end;
-        const end=merged[i].start;
-        if(start<end){
-            freeTime.push([start,end]);
+        const prevEnd=merged[i-1].end;
+        const currStart=merged[i].start;
+        if(prevEnd<currStart){
+            freeTime.push([prevEnd,currStart]);
         }
     }
     return freeTime;
