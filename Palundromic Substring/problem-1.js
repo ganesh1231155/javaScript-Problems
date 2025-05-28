@@ -21,7 +21,7 @@ function longestPalindromic(s){
     for(let i=0;i<n-1;i++){
         if(s[i]===s[i+1]){
             dp[i][i+1]=true;
-            start=1;
+            start=i;
             maxLen=2;
         }
     }
@@ -42,4 +42,4 @@ function longestPalindromic(s){
     return s.substring(start,start+maxLen);
 
 }
-console.log(longestPalindromic("babad"));
+console.log(longestPalindromic("babbabad"));
