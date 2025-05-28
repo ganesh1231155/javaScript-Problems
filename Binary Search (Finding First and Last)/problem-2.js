@@ -30,9 +30,10 @@ function occurance(nums,target){
         }
         return bound;
     }
-    return findPositions(false)-findPositions(true)+1;
+    const result=[findPositions(true),findPositions(false)];
+    return result[1]!=-1 ? (result[1]-result[0]+1) : 0;
 }
 
-const nums=[2,4, 6, 6, 8];
+const nums=[2, 6, 6, 8];
 const target=4;
 console.log(occurance(nums,target));
