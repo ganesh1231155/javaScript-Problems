@@ -25,8 +25,11 @@ function longestPalindromic(s){
             maxLen=2;
         }
     }
+    // if(n==3 && s[0]===s[2]&&dp[1][1]){
+    //     return s
+    // }
 
-    for(let len=3;len<n;len++){
+    for(let len=3;len<=n;len++){
         for(let i=0;i<=n-len;i++){
             let j=i+len-1;
             if(s[i]===s[j]&&dp[i+1][j-1]){
@@ -42,4 +45,4 @@ function longestPalindromic(s){
     return s.substring(start,start+maxLen);
 
 }
-console.log(longestPalindromic("babbabad"));
+console.log(longestPalindromic("ccc"));
